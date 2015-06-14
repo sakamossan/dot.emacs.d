@@ -22,6 +22,10 @@
     foreign-regexp
     ssh-config-mode
     expand-region
+
+    helm
+    git-gutter
+    rainbow-delimiters
     ))
 
 (let ((not-installed (loop for x in installing-package-list
