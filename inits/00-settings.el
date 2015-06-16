@@ -20,9 +20,6 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (setq-default tab-width 4 indent-tabs-mode nil)
 
-;; 編集時 buffer 再読み込み
-(global-auto-revert-mode 1)
-
 ;; save-buffer 時，buffer 末尾に空行が常にあるように
 (setq require-final-newline t)
 
@@ -78,12 +75,27 @@
 (set-default 'mode-line-buffer-identification
                   '(buffer-file-name ("%f") ("%b")))
 
-; アクティブなバッファのモードラインの文字色の設定
-(set-face-foreground 'mode-line "black")
+; auto-revert  git-checkoutしたときなどにauto-revirtする
+(global-auto-revert-mode 1)
+(setq global-auto-revert-mode-text "")
+
+; (yes/no) を (y/n)に
+(fset 'yes-or-no-p 'y-or-n-p)
+
+; キーバインドの通知
+(setq suggest-key-bindings t)
+
+; アクティブなバッファのモードラインの背景色の設定
+(set-face-background 'mode-line "MediumPurple1")  
+
 
 ; 複数行移動
 (global-set-key "\M-n" (kbd "C-u 2 C-n"))
 (global-set-key "\M-p" (kbd "C-u 2 C-p"))
+
+; ページ移動
+(global-set-key "\C-\M-p" (kbd "M-v"))
+(global-set-key "\C-\M-n" (kbd "C-v"))
 
 ; 一つ前のバッファと後のバッファ
 (define-key global-map (kbd "C-c p") 'bs-cycle-next)
@@ -97,6 +109,9 @@
 
 ;; 自動セーブしない
 (setq auto-save-default nil)
+
+;; C-hでバックスペース
+(global-set-key "\C-h" 'delete-backward-char)
 
 ;; リージョンをC-hで削除
 (delete-selection-mode 1)

@@ -9,3 +9,6 @@
 
 (setq auto-mode-alist (cons '("\\.t$" . cperl-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.psgi$" . cperl-mode) auto-mode-alist))
+
+; .tt file html-mode
+(add-to-list 'auto-mode-alist '("\\.tt$" . html-mode))

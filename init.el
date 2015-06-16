@@ -18,6 +18,7 @@
     yaml-mode
     recentf-ext
     popwin
+    tramp
     auto-complete
     foreign-regexp
     ssh-config-mode
