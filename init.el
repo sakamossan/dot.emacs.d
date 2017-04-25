@@ -27,6 +27,7 @@
     helm
     git-gutter
     rainbow-delimiters
+    git-link
     ))
 
 (let ((not-installed (loop for x in installing-package-list
