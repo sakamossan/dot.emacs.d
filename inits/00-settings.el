@@ -116,6 +116,9 @@
 ;; リージョンをC-hで削除
 (delete-selection-mode 1)
 
+; マークセット(macosの日本語切り替えと競合するため)
+(global-set-key "\M- " 'set-mark-command)
+
 ;; インデントはスペースで
 (setq-default indent-tabs-mode nil)
 ;; タブ幅は4
