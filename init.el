@@ -20,7 +20,6 @@
     popwin
     tramp
     auto-complete
-    foreign-regexp
     ssh-config-mode
     expand-region
 
@@ -28,6 +27,7 @@
     git-gutter
     rainbow-delimiters
     git-link
+    foreign-regexp
     ))
 
 (let ((not-installed (loop for x in installing-package-list
